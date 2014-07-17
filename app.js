@@ -14,14 +14,6 @@ var HTTP_PORT = 8080;
 
 
 // Configure Connection to SQL Database
-var connection = mysql.createConnection({
-  host     : '',
-  user     : 'userWill',
-  password : 'mci84177',
-  port 	   : '3306'
-});
-
-
 
 
 
