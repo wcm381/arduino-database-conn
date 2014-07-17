@@ -1,5 +1,34 @@
-
+// Load Modules
+var http = require('http'),
+    net = require('net'),
+    url = require('url'),
+    fs = require('fs'),
+    io = require('socket.io'),
+    server;
 
 var mysql      = require('mysql2');
-var connection = mysql.createConnection({ user: 'test', database: 'test'});
+
+// HTTP Port Number for HTTP Server
+var HTTP_PORT = 8080;
+
+
+
+// Configure Connection to SQL Database
+var connection = mysql.createConnection({
+  host     : '',
+  user     : 'userWill',
+  password : 'mci84177',
+  port 	   : '3306'
+});
+
+
+
+
+
+
+
+
+
+
+
 
