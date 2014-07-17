@@ -13,13 +13,16 @@ var HTTP_PORT = 8080;
 
 
 
-// Configure Connection to SQL Database
+// Configure Connection and Connect to SQL Database
+var connection = mysql.createConnection({
+	host     : 'dbinstancesql.c7tazdmnvenv.us-east-1.rds.amazonaws.com;dbname=mydbSQL1',
+	user     : 'userWill',
+	password : 'xxxxxxxx',
+	port 	   : '3306'
+});
 
 
-
-
-
-
+// 
 
 
 
