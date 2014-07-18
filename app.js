@@ -27,7 +27,8 @@ var connection = mysql.createConnection({
 
 // Connect to SQL Database
 connection.connect(function(err) {
-  // connected unless `err` is set
+  console.log("ERROR: " + err.message);
+  throw err;
 });
 
 // Don't need connection.query('USE' ...  ?
@@ -39,7 +40,10 @@ connection.query( 'CREATE TABLE IF NOT EXISTS sampleTbl (' +
 		'Temp  FLOAT	 NOT NULL,'  +
 		'PRIMARY KEY(P_Id)'	     +
 		')', function( err ){
-    			if ( err )  throw err;
+    			if ( err )  {
+    				console.log("ERROR: " + err.message);	
+    				throw err;
+    			}
     			console.log( 'Table created.' );
 		});
 		
@@ -49,7 +53,10 @@ connection.query( 'CREATE TABLE IF NOT EXISTS sampleTbl (' +
 var sampleSet = { Time: '2014-07-17 23:16:00', Temp: 23.1 };
 
 connection.query( 'INSERT INTO sampleTbl SET ?', sampleSet, function(err, result) {
-	if ( err )  throw err;
+	if ( err ) {
+		console.log("ERROR: " + err.message);	
+		throw err;
+	}
 	console.log(results);
 });
 
