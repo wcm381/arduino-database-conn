@@ -69,6 +69,8 @@ client.query('SELECT * FROM sampleTbl', function (err, rows, result) {
 	for (var i in rows) {
 		console.log('Temp Values: ', rows[i].Temp);	
 	}
+});
+
 
 // End Connection to Database
 connection.end();			
