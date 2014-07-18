@@ -21,17 +21,19 @@ var connection = mysql.createConnection({
 	host     : 'xxxxxxx',
 	user     : 'xxxxxxx',
 	password : 'xxxxxxxx',
-	port 	   : '3306'
+	port 	 : '3306',
+	database : 'xxxxxx'
 });
 
 
 // Connect to SQL Database
 connection.connect(function(err) {
-  console.log("ERROR: " + err.message);
-  throw err;
+	if (err) {
+  		console.log("ERROR: " + err.message);
+  		throw err;
+	}
 });
 
-// Don't need connection.query('USE' ...  ?
 
 // Create Table
 connection.query( 'CREATE TABLE IF NOT EXISTS sampleTbl (' +
@@ -57,7 +59,7 @@ connection.query( 'INSERT INTO sampleTbl SET ?', sampleSet, function(err, result
 		console.log("ERROR: " + err.message);	
 		throw err;
 	}
-	console.log(results);
+	console.log(result);
 });
 
 		
