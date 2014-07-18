@@ -64,7 +64,7 @@ connection.query( 'INSERT INTO sampleTbl SET ?', sampleSet, function(err, result
 
 					
 // Check Table for Row I just put In					
-client.query('SELECT * FROM sampleTbl', function (err, rows, result) {
+connection.query('SELECT * FROM sampleTbl', function (err, rows, result) {
 	if ( err )  throw err;
 	for (var i in rows) {
 		console.log('Temp Values: ', rows[i].Temp);	
